@@ -1,4 +1,4 @@
-package com.example.Katana;
+package com.example.katana;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
