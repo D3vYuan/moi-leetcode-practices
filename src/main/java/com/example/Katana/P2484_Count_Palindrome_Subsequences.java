@@ -1,18 +1,20 @@
 package com.example.katana;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class P2484_Count_Palindrome_Subsequences {
     // Strategy
     // [1] Using sliding window get all the subsequence
     // [2] Use Memo to Store Processed Data
     // [3] If substring is memo, store to set
-
+    
     private Map<String, Boolean> memo = new HashMap<>();
     private List<String> palindromes = new ArrayList<>();
     private int subStringLength = 5;

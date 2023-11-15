@@ -26,14 +26,15 @@ public class P2642_Design_Graph_With_Shortest_Path_Calculator {
 
         public int shortestPath(int node1, int node2) {
             int n = adjList.size();
-            var pq = new PriorityQueue<List<Integer>>(Comparator.comparingInt(list -> list.get(0)));
+            PriorityQueue<List<Integer>> pq = new PriorityQueue<List<Integer>>(
+                    Comparator.comparingInt(list -> list.get(0)));
             int[] costForNode = new int[n];
             Arrays.fill(costForNode, Integer.MAX_VALUE);
             costForNode[node1] = 0;
             pq.offer(Arrays.asList(0, node1));
 
             while (!pq.isEmpty()) {
-                var curr = pq.poll();
+                List<Integer> curr = pq.poll();
                 int currCost = curr.get(0);
                 int currNode = curr.get(1);
 
@@ -43,7 +44,7 @@ public class P2642_Design_Graph_With_Shortest_Path_Calculator {
                 if (currNode == node2) {
                     return currCost;
                 }
-                for (var neighbor : adjList.get(currNode)) {
+                for (Pair<Integer, Integer> neighbor : adjList.get(currNode)) {
                     int neighborNode = neighbor.getKey();
                     int cost = neighbor.getValue();
                     int newCost = currCost + cost;
