@@ -1,4 +1,3 @@
-# moi-leetcode-practices
-[Leetcode][leetcode-url] Practicing 
+[Leetcode][leetcode-url] Eat, Sleep, Code, Repeat 
 
 [leetcode-url]: https://leetcode.com/
