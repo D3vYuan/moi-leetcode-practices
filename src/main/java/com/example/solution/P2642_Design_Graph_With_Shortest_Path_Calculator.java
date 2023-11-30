@@ -6,7 +6,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 
 public class P2642_Design_Graph_With_Shortest_Path_Calculator {
     class Graph {
@@ -17,11 +18,11 @@ public class P2642_Design_Graph_With_Shortest_Path_Calculator {
             for (int i = 0; i < n; i++)
                 adjList.add(new ArrayList<>());
             for (int[] e : edges)
-                adjList.get(e[0]).add(new Pair<>(e[1], e[2]));
+                adjList.get(e[0]).add(new ImmutablePair<Integer, Integer>(e[1], e[2]));
         }
 
         public void addEdge(int[] edge) {
-            adjList.get(edge[0]).add(new Pair<>(edge[1], edge[2]));
+            adjList.get(edge[0]).add(new ImmutablePair<Integer, Integer>(edge[1], edge[2]));
         }
 
         public int shortestPath(int node1, int node2) {

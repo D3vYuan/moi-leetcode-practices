@@ -8,7 +8,8 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 
 public class Dijkstra {
     public void calculate() {
@@ -23,7 +24,7 @@ public class Dijkstra {
 
         Queue<Pair<Integer, Integer>> heap = new PriorityQueue<Pair<Integer, Integer>>(
                 Comparator.comparing(Pair::getKey));
-        heap.add(new Pair(0, source));
+        heap.add(new ImmutablePair<Integer, Integer>(0, source));
 
         while (!heap.isEmpty()) {
             Pair<Integer, Integer> curr = heap.remove();
@@ -41,7 +42,7 @@ public class Dijkstra {
 
                 if (dist < distances[nei]) {
                     distances[nei] = dist;
-                    heap.add(new Pair(dist, nei));
+                    heap.add(new ImmutablePair<Integer, Integer>(dist, nei));
                 }
             }
         }
