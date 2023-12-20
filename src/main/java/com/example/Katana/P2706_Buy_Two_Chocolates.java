@@ -1,4 +1,4 @@
-package com.example.solution;
+package com.example.katana;
 
 import java.util.PriorityQueue;
 
