@@ -1,4 +1,4 @@
-package com.example.solution.Q1501_Q2000;
+package com.example.solution.Q001_Q500;
 
 import java.util.Stack;
 
